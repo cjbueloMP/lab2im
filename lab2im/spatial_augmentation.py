@@ -17,7 +17,7 @@ def deform_tensor(tensor,
                   apply_elastic_trans=True,
                   interp_method='linear',
                   nonlin_std=2.,
-                  nonlin_shape_factor=.0625):
+                  nonlin_shape_factor=0.0625):
     """This function spatially deforms a tensor with a combination of affine and elastic transformations.
     :param tensor: input tensor to deform. Expected to have shape [batchsize, shape_dim1, ..., shape_dimn, channel].
     :param affine_trans: (optional) tensor of shape [batchsize, n_dims+1, n_dims+1] corresponding to an affine 

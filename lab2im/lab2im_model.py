@@ -115,13 +115,15 @@ def lab2im_model(labels_shape,
         # resample channel
         channel = resample_tensor(channel, output_shape, 'linear', n_dims=n_dims)
 
-        # apply bias field
-        channel = bias_field_augmentation(channel, bias_shape_factor=.025, bias_field_std=.3)
+        # ditch intensity modulation for liver
 
-        # intensity augmentation
-        channel = KL.Lambda(lambda x: K.clip(x, 0, 300))(channel)
-        channel = min_max_normalisation(channel)
-        processed_channels.append(gamma_augmentation(channel, std=0.2))
+        # # apply bias field
+        # channel = bias_field_augmentation(channel, bias_shape_factor=.025, bias_field_std=.3)
+        # 
+        # # intensity augmentation
+        # channel = KL.Lambda(lambda x: K.clip(x, 0, 300))(channel)
+        # channel = min_max_normalisation(channel)
+        processed_channels.append(channel)
 
     # concatenate all channels back
     if n_channels > 1:
