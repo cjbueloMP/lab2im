@@ -15,7 +15,7 @@ import ext.neuron.layers as nrn_layers
 def deform_tensor(tensor,
                   affine_trans=None,
                   apply_elastic_trans=True,
-                  interp_method='linear',
+                  interp_method='nearest',
                   nonlin_std=4.,
                   nonlin_shape_factor=0.0625):
     """This function spatially deforms a tensor with a combination of affine and elastic transformations.
