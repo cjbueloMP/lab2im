@@ -228,10 +228,10 @@ class ImageGenerator:
                     # draw means and std devs from priors
                     tmp_classes_means = utils.draw_value_from_distribution(tmp_prior_means, n_labels,
                                                                            self.prior_distributions, 125., 100.,
-                                                                           positive_only=True)
+                                                                           positive_only=False)
                     tmp_classes_stds = utils.draw_value_from_distribution(tmp_prior_stds, n_labels,
                                                                           self.prior_distributions, 15., 10.,
-                                                                          positive_only=True)
+                                                                          positive_only=False)
                     tmp_means = utils.add_axis(tmp_classes_means[self.generation_classes], -1)
                     tmp_stds = utils.add_axis(tmp_classes_stds[self.generation_classes], -1)
                     means = np.concatenate([means, tmp_means], axis=1)
