@@ -23,7 +23,7 @@ class ImageGenerator:
                  prior_means=None,
                  prior_stds=None,
                  use_specific_stats_for_channel=False,
-                 blur_background=True,
+                 blur_background=False,
                  blur_range=1.15):
         """
         This class is wrapper around the lab2im_model model. It contains the GPU model that generates images from labels

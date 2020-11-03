@@ -114,7 +114,7 @@ def mask_volume(volume, mask=None, threshold=0.1, dilate=0, erode=0, masking_val
         return volume
 
 
-def rescale_volume(volume, new_min=0, new_max=255, min_percentile=0.025, max_percentile=0.975, use_positive_only=True):
+def rescale_volume(volume, new_min=0, new_max=255, min_percentile=0.025, max_percentile=0.975, use_positive_only=False):
     """This function linearly rescales a volume between new_min and new_max.
     :param volume: a numpy array
     :param new_min: (optional) minimum value for the rescaled image.
@@ -696,7 +696,7 @@ def mask_images_in_dir(image_dir, result_dir, mask_dir=None, threshold=0.1, dila
 
 def rescale_images_in_dir(image_dir, result_dir,
                           new_min=0, new_max=255,
-                          min_percentile=0.025, max_percentile=0.975, use_positive_only=True,
+                          min_percentile=0.025, max_percentile=0.975, use_positive_only=False,
                           recompute=True):
     """This function linearly rescales all volumes in image_dir between new_min and new_max.
     :param image_dir: path of directory with images to rescale

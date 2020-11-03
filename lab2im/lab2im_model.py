@@ -22,7 +22,7 @@ def lab2im_model(labels_shape,
                  target_res,
                  output_shape=None,
                  output_div_by_n=None,
-                 blur_background=True,
+                 blur_background=False,
                  blur_range=1.15):
     """
     This function builds a keras/tensorflow model to generate images from provided label maps.
@@ -110,7 +110,7 @@ def lab2im_model(labels_shape,
 
         sigma = utils.get_std_blurring_mask_for_downsampling(target_res, atlas_res)
         kernels_list = get_gaussian_1d_kernels(sigma, blurring_range=blur_range)
-        channel = blur_channel(channel, mask, kernels_list, n_dims, blur_background)
+        #channel = blur_channel(channel, mask, kernels_list, n_dims, blur_background)
 
         # resample channel
         channel = resample_tensor(channel, output_shape, 'linear', n_dims=n_dims)
