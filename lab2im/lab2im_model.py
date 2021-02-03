@@ -33,7 +33,7 @@ def lab2im_model(labels_shape,
         -a vector containing the standard deviations of the Gaussian Mixture Model for each label,
         -an array of size batch*(n_dims+1)*(n_dims+1) representing a linear transformation
     The model returns:
-        -the generated image normalised between 0 and 1.
+        -the generated image
         -the corresponding label map, with only the labels present in output_labels (the other are reset to zero).
     :param labels_shape: shape of the input label maps. Can be a sequence or a 1d numpy array.
     :param n_channels: number of channels to be synthetised.
