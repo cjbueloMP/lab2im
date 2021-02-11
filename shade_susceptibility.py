@@ -1,4 +1,5 @@
 import numpy as np
+import os
 
 def shade_susceptibility(im,labmap,label_path,mag=4):
     labels = load_array_if_path(label_path)
@@ -12,10 +13,10 @@ def shade_susceptibility(im,labmap,label_path,mag=4):
     grad_map = np.zeros(im.shape)
     for i in labels:
         r1 = np.random.uniform()
-	theta = np.arccos(1-(2*r1))
-	r2 = np.random.uniform()
-	phi = 2*np.pi*r2
-	mag = np.random.uniform(0,mag)
+        theta = np.arccos(1-(2*r1))
+        r2 = np.random.uniform()
+        phi = 2*np.pi*r2
+        mag = np.random.uniform(0,mag)
 
         x = mag*np.cos(phi)*np.sin(theta)
         y = mag*np.sin(phi)*np.sin(theta)
